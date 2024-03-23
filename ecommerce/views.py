@@ -24,6 +24,13 @@ def home (request):
     return render (request,'home.html',context)
 
 
+def PRODUCT_DETAILS (request,slug):
+    product = Product.objects.get(slug = slug)
 
+    data = {
+        'product':product,
+    }
+
+    return render (request,'product/product_detail.html',data)
 
 
